@@ -1,20 +1,15 @@
 import { 
-  SiHtml5, SiCss3, SiJavascript, SiReact, SiVuedotjs, SiNextdotjs,
-  SiMui, SiTailwindcss, SiTypescript, SiFigma
+  SiJavascript, SiReact, SiNextdotjs, SiTailwindcss, SiTypescript
 } from 'react-icons/si';
+import { Marquee, MarqueeContent, MarqueeItem } from './ui/marquee';
 
 export default function TechMarquee() {
   const frontendTechnologies = [
-    { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
-    { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
     { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
     { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
     { name: 'React.js', icon: SiReact, color: '#61DAFB' },
-    { name: 'Vue.js', icon: SiVuedotjs, color: '#4FC08D' },
     { name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
-    { name: 'Material UI', icon: SiMui, color: '#007FFF' },
     { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
-    { name: 'Figma', icon: SiFigma, color: '#F24E1E' },
   ];
 
   return (
@@ -26,23 +21,17 @@ export default function TechMarquee() {
         </p>
       </div>
 
-      <div className="relative overflow-hidden">
-        {/* Gradient overlays */}
-        <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-gray-900 to-transparent z-10"></div>
-        <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-gray-900 to-transparent z-10"></div>
-        
-        {/* Infinite sliding marquee */}
-        <div className="flex animate-marquee space-x-16">
-          {/* First set */}
+      <Marquee >
+        <MarqueeContent speed={50} pauseOnHover>
           {frontendTechnologies.map((tech, index) => {
             const IconComponent = tech.icon;
             return (
-              <div 
-                key={`first-${index}`}
-                className="flex flex-col items-center space-y-3 min-w-fit flex-shrink-0"
+              <MarqueeItem
+                key={index}
+                className="flex flex-col items-center space-y-3 mx-8"
               >
                 <div 
-                  className="w-16 h-16 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
+                  className="w-16 h-16 flex items-center justify-center rounded-lg  hover:bg-gray-700 "
                   style={{ color: tech.color }}
                 >
                   <IconComponent size={40} />
@@ -50,32 +39,11 @@ export default function TechMarquee() {
                 <span className="text-sm font-medium text-gray-300 whitespace-nowrap">
                   {tech.name}
                 </span>
-              </div>
+              </MarqueeItem>
             );
           })}
-          
-          {/* Second set for seamless loop */}
-          {frontendTechnologies.map((tech, index) => {
-            const IconComponent = tech.icon;
-            return (
-              <div 
-                key={`second-${index}`}
-                className="flex flex-col items-center space-y-3 min-w-fit flex-shrink-0"
-              >
-                <div 
-                  className="w-16 h-16 flex items-center justify-center rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
-                  style={{ color: tech.color }}
-                >
-                  <IconComponent size={40} />
-                </div>
-                <span className="text-sm font-medium text-gray-300 whitespace-nowrap">
-                  {tech.name}
-                </span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+        </MarqueeContent>
+      </Marquee>
     </section>
   );
 }

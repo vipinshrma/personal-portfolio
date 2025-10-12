@@ -1,6 +1,6 @@
 import AboutHero from '../../components/AboutHero';
 import KeyAchievements from '../../components/KeyAchievements';
-import Capabilities from '../../components/Capabilities';
+import TechCategories from '../../components/TechCategories';
 import Experience from '../../components/Experience';
 import Contact from '../../components/Contact';
 
@@ -9,8 +9,8 @@ export default function About() {
     <>
       <AboutHero />
       <KeyAchievements />
-      <Capabilities />
       <Experience />
+      <TechCategories />
       <Contact />
     </>
   );
