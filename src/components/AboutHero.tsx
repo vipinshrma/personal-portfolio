@@ -2,10 +2,10 @@ import SocialLinks from './SocialLinks';
 
 export default function AboutHero() {
   return (
-    <section className="px-8 py-20 max-w-7xl mx-auto">
+    <section className="px-4 md:px-8 py-20 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         <div>
-          <h1 className="text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
             ABOUT ME
           </h1>
           <h2 className="text-2xl font-bold mb-6">
@@ -19,20 +19,22 @@ export default function AboutHero() {
             hitting the gym and playing COD. Always learning more to improve my skills.
           </p>
           
-          <div className="flex items-center gap-6 mb-8">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
             <a 
               href="/resume_vipan_sharma.pdf" 
               download="Vipan_Sharma_Resume.pdf"
-              className="bg-[#CCFF00] text-black px-6 py-3 rounded-full font-medium hover:bg-[#b8e600] transition-colors inline-block"
+              className="bg-[#CCFF00] text-black px-6 py-3 rounded-full font-medium hover:bg-[#b8e600] transition-colors inline-block text-center"
             >
               DOWNLOAD RESUME
             </a>
-            <SocialLinks />
+            <div className="flex justify-center sm:justify-start">
+              <SocialLinks />
+            </div>
           </div>
         </div>
         
         <div className="flex justify-center lg:justify-end">
-          <div className="w-96 h-[500px] bg-gray-300 rounded-2xl overflow-hidden">
+          <div className="w-full max-w-sm md:w-96 h-[500px] bg-gray-300 rounded-2xl overflow-hidden">
             <div className="w-full h-full bg-gradient-to-b from-gray-200 to-gray-400 flex items-center justify-center">
               <div className="text-center text-gray-600">
                 <div className="w-32 h-32 bg-gray-500 rounded-full mx-auto mb-6"></div>

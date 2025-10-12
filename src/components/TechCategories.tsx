@@ -55,9 +55,9 @@ export default function TechCategories() {
   ];
 
   return (
-    <section className="px-8 py-20 max-w-7xl mx-auto">
+    <section className="px-4 md:px-8 py-20 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-5xl font-bold mb-4">TECHNOLOGIES & SKILLS</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">TECHNOLOGIES & SKILLS</h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
           A comprehensive overview of the modern technologies and tools I work with to create scalable applications
         </p>
@@ -79,18 +79,18 @@ export default function TechCategories() {
                   return (
                     <MarqueeItem 
                       key={`${categoryIndex}-${techIndex}`}
-                      className="flex flex-col items-center space-y-3 mx-6 group"
+                      className="flex flex-col items-center space-y-3 mx-3 md:mx-6 group"
                     >
                       <div 
-                        className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 group-hover:scale-110 border border-gray-700 hover:border-gray-500"
+                        className="w-16 md:w-20 h-16 md:h-20 flex items-center justify-center rounded-2xl bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 group-hover:scale-110 border border-gray-700 hover:border-gray-500"
                         style={{ 
                           boxShadow: `0 0 20px ${tech.color}20`
                         }}
                       >
                         <IconComponent 
-                          size={36} 
+                          size={28} 
                           style={{ color: tech.color }} 
-                          className="transition-transform duration-300 group-hover:scale-110"
+                          className="transition-transform duration-300 group-hover:scale-110 md:text-4xl"
                         />
                       </div>
                       <span className="text-sm font-medium text-gray-300 whitespace-nowrap group-hover:text-white transition-colors">

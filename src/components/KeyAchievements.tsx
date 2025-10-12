@@ -12,7 +12,7 @@ export default function KeyAchievements() {
   return (
     <section className="px-8 py-20 max-w-7xl mx-auto">
       <div className="mb-16">
-        <h2 className="text-5xl font-bold mb-8">KEY ACHIEVEMENTS</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-8">KEY ACHIEVEMENTS</h2>
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">

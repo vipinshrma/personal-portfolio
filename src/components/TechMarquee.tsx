@@ -15,7 +15,7 @@ export default function TechMarquee() {
   return (
     <section className="py-20 bg-gray-900/50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 mb-16">
-        <h2 className="text-5xl font-bold text-center mb-4">FRONTEND TECHNOLOGIES</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">FRONTEND TECHNOLOGIES</h2>
         <p className="text-gray-400 text-center max-w-2xl mx-auto">
           The frontend technologies I use to create modern, responsive web applications
         </p>

@@ -49,7 +49,7 @@ export default function ProjectCard({
         {category && (
           <p className="text-gray-500 text-sm mb-2">{category}</p>
         )}
-        <h3 className="text-3xl font-bold mb-4">{title}</h3>
+        <h3 className="text-2xl md:text-3xl font-bold mb-4">{title}</h3>
         <p className="text-gray-400 mb-6">{description}</p>
         
         <div className="space-y-4 mb-6">
@@ -76,11 +76,11 @@ export default function ProjectCard({
           )}
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4">
           {buttons.primary && (
             <a 
               href={buttons.primary.href}
-              className="text-[#CCFF00] font-medium flex items-center gap-2 hover:text-white transition-colors"
+              className="text-[#CCFF00] font-medium flex items-center justify-center sm:justify-start gap-2 hover:text-white transition-colors"
             >
               {buttons.primary.text} <span>→</span>
             </a>
@@ -88,7 +88,7 @@ export default function ProjectCard({
           {buttons.secondary && (
             <a 
               href={buttons.secondary.href}
-              className="text-[#CCFF00] font-medium flex items-center gap-2 hover:text-white transition-colors"
+              className="text-[#CCFF00] font-medium flex items-center justify-center sm:justify-start gap-2 hover:text-white transition-colors"
             >
               {buttons.secondary.text} <span>↗</span>
             </a>

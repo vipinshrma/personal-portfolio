@@ -42,7 +42,7 @@ export default function Contact() {
     <section id="contact" className="px-8 py-20 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
-          <h2 className="text-5xl font-bold mb-8">LET'S CONNECT</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">LET'S CONNECT</h2>
           <p className="text-gray-400 mb-4">
             Say hello at{" "}
             <a href="mailto:vipansharma.dev@gmail.com" className="text-[#CCFF00] hover:text-white transition-colors">
@@ -121,7 +121,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`px-8 py-3 rounded-full font-medium transition-colors ${
+              className={`w-full md:w-auto px-6 md:px-8 py-3 rounded-full font-medium transition-colors ${
                 isSubmitting 
                   ? 'bg-gray-600 text-gray-300 cursor-not-allowed' 
                   : 'bg-[#CCFF00] text-black hover:bg-[#b8e600]'
