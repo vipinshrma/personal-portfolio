@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "../components/theme-provider";
+import LenisScroll from "../components/lenis-scroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <LenisScroll />
           <Navigation />
           <main>
             {children}

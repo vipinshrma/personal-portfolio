@@ -13,7 +13,7 @@ export default function TechMarquee() {
   ];
 
   return (
-    <section className="py-20 bg-muted/30 overflow-hidden">
+    <section id="technologies" className="py-20 bg-muted/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">FRONTEND TECHNOLOGIES</h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto">
