@@ -101,7 +101,7 @@ export default function Capabilities() {
           <div className="space-y-6">
             {skillCategories.map((category, categoryIndex) => (
               <div key={categoryIndex}>
-                <h3 className="text-sm font-semibold text-[#CCFF00] mb-3 uppercase tracking-wider">{category.title}</h3>
+                <h3 className="text-sm font-semibold  mb-3 uppercase tracking-wider">{category.title}</h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => {
                     const IconComponent = skill.icon;

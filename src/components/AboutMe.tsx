@@ -16,7 +16,7 @@ export default function AboutMe() {
             developing. I am passionate and curious about solving problems. When I'm not programming, I enjoy 
             hitting the gym and playing COD. Always learning more to improve my skills.
           </p>
-          <a href="/about" className="text-[#CCFF00] font-medium hover:text-white transition-colors">
+          <a href="/about" className="text-primary font-medium hover:text-white transition-colors">
             MORE ABOUT ME
           </a>
         </div>

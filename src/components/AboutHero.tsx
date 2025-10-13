@@ -35,13 +35,11 @@ export default function AboutHero() {
         
         <div className="flex justify-center lg:justify-end">
           <div className="w-full max-w-sm md:w-96 h-[500px] bg-muted rounded-2xl overflow-hidden">
-            <div className="w-full h-full bg-gradient-to-b from-muted/80 to-muted flex items-center justify-center">
-              <div className="text-center text-muted-foreground">
-                <div className="w-32 h-32 bg-muted-foreground/20 rounded-full mx-auto mb-6"></div>
-                <p className="text-xl font-medium">Profile Photo</p>
-                <p className="text-sm">Professional headshot</p>
-              </div>
-            </div>
+            <img
+              src="https://media.licdn.com/dms/image/v2/D4D03AQH4bNOuSVB7cQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1681824062992?e=1762992000&v=beta&t=t1KCZAjTMppKBpxOgpHgnDD_nwDX0CQzA5JZ-KTfLYE"
+              alt="Vipan Sharma - Professional Photo"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
