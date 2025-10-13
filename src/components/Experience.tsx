@@ -33,31 +33,31 @@ export default function Experience() {
     <section className="px-8 py-20 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
-          <h2 className="text-5xl font-bold mb-8">MY EXPERIENCE</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">MY EXPERIENCE</h2>
         </div>
         <div className="space-y-16">
           {experiences.map((exp, index) => (
-            <div key={index} className="border-l-2 border-gray-700 pl-8 relative">
-              <div className="absolute -left-2 top-0 w-4 h-4 bg-[#CCFF00] rounded-full"></div>
+            <div key={index} className="border-l-2 border-border pl-8 relative">
+              <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
               
               <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-3">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">{exp.title}</h3>
-                  <p className="text-[#CCFF00] font-medium mb-1">{exp.company}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-1">{exp.title}</h3>
+                  <p className="text-primary font-medium mb-1">{exp.company}</p>
                   {exp.location && (
-                    <p className="text-sm text-gray-500">{exp.location}</p>
+                    <p className="text-sm text-muted-foreground">{exp.location}</p>
                   )}
                 </div>
-                <span className="text-sm text-gray-400 whitespace-nowrap mt-2 lg:mt-0 lg:ml-4">{exp.period}</span>
+                <span className="text-sm text-muted-foreground whitespace-nowrap mt-2 lg:mt-0 lg:ml-4">{exp.period}</span>
               </div>
               
-              <p className="text-gray-400 leading-relaxed mb-4">{exp.description}</p>
+              <p className="text-muted-foreground leading-relaxed mb-4">{exp.description}</p>
               
               {exp.achievements && (
                 <ul className="space-y-2">
                   {exp.achievements.map((achievement, achIndex) => (
-                    <li key={achIndex} className="text-gray-400 text-sm leading-relaxed flex items-start">
-                      <span className="text-[#CCFF00] mr-2 mt-1 flex-shrink-0">•</span>
+                    <li key={achIndex} className="text-muted-foreground text-sm leading-relaxed flex items-start">
+                      <span className="text-primary mr-2 mt-1 flex-shrink-0">•</span>
                       <span>{achievement}</span>
                     </li>
                   ))}

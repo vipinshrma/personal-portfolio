@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "../components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,38 +27,48 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-black text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
-        <Navigation />
-        <main>
-          {children}
-        </main>
-        <Footer />
-        <Toaster
-          position="top-right"
-          toastOptions={{
-            duration: 4000,
-            style: {
-              background: '#1f2937',
-              color: '#f3f4f6',
-              border: '1px solid #374151',
-            },
-            success: {
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navigation />
+          <main>
+            {children}
+          </main>
+          <Footer />
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 4000,
+              className: "",
               style: {
-                background: '#065f46',
-                border: '1px solid #10b981',
+                background: 'hsl(var(--card))',
+                color: 'hsl(var(--card-foreground))',
+                border: '1px solid hsl(var(--border))',
               },
-            },
-            error: {
-              style: {
-                background: '#7f1d1d',
-                border: '1px solid #ef4444',
+              success: {
+                style: {
+                  background: 'hsl(var(--primary))',
+                  color: 'hsl(var(--primary-foreground))',
+                  border: '1px solid hsl(var(--primary))',
+                },
               },
-            },
-          }}
-        />
+              error: {
+                style: {
+                  background: 'hsl(var(--destructive))',
+                  color: 'hsl(var(--destructive-foreground))',
+                  border: '1px solid hsl(var(--destructive))',
+                },
+              },
+            }}
+          />
+        </ThemeProvider>
       </body>
     </html>
   );

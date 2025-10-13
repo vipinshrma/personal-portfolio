@@ -44,7 +44,7 @@ export default function SocialLinks() {
         <a 
           key={link.name}
           href={link.href} 
-          className="text-[#CCFF00] hover:text-white transition-colors"
+          className="text-primary hover:text-primary/80 transition-colors"
           aria-label={link.name}
         >
           {link.icon}

@@ -13,10 +13,10 @@ export default function TechMarquee() {
   ];
 
   return (
-    <section className="py-20 bg-gray-900/50 overflow-hidden">
+    <section className="py-20 bg-muted/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">FRONTEND TECHNOLOGIES</h2>
-        <p className="text-gray-400 text-center max-w-2xl mx-auto">
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto">
           The frontend technologies I use to create modern, responsive web applications
         </p>
       </div>
@@ -31,12 +31,12 @@ export default function TechMarquee() {
                 className="flex flex-col items-center space-y-3 mx-8"
               >
                 <div 
-                  className="w-16 h-16 flex items-center justify-center rounded-lg  hover:bg-gray-700 "
+                  className="w-16 h-16 flex items-center justify-center rounded-lg hover:bg-muted/50"
                   style={{ color: tech.color }}
                 >
                   <IconComponent size={40} />
                 </div>
-                <span className="text-sm font-medium text-gray-300 whitespace-nowrap">
+                <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">
                   {tech.name}
                 </span>
               </MarqueeItem>

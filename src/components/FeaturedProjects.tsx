@@ -107,7 +107,7 @@ export default function FeaturedProjects() {
   return (
     <section className="px-8 py-20 max-w-7xl mx-auto">
       <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">FEATURED PROJECTS</h2>
-      <p className="text-gray-400 mb-16 max-w-2xl mx-auto text-center">
+      <p className="text-muted-foreground mb-16 max-w-2xl mx-auto text-center">
         Here are some of the selected projects that showcase my passion for 
         front-end development.
       </p>

@@ -20,8 +20,8 @@ export default function KeyAchievements() {
           <ul className="space-y-6">
             {achievements.map((achievement, index) => (
               <li key={index} className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-[#CCFF00] rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-gray-300 leading-relaxed text-lg">{achievement}</p>
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <p className="text-muted-foreground leading-relaxed text-lg">{achievement}</p>
               </li>
             ))}
           </ul>
@@ -37,7 +37,7 @@ export default function KeyAchievements() {
               className="w-full h-auto rounded-lg shadow-lg"
               priority
             />
-            <p className="text-gray-400 text-sm mt-3 text-center">
+            <p className="text-muted-foreground text-sm mt-3 text-center">
               Netathon Hackathon Winner - Net Solutions (₹1,00,000)
             </p>
           </div>

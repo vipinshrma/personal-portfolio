@@ -58,7 +58,7 @@ export default function TechCategories() {
     <section className="px-4 md:px-8 py-20 max-w-7xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold mb-4">TECHNOLOGIES & SKILLS</h2>
-        <p className="text-gray-400 max-w-2xl mx-auto">
+        <p className="text-muted-foreground max-w-2xl mx-auto">
           A comprehensive overview of the modern technologies and tools I work with to create scalable applications
         </p>
       </div>
@@ -67,8 +67,8 @@ export default function TechCategories() {
         {techCategories.map((category, categoryIndex) => (
           <div key={categoryIndex} className="relative">
             <div className="mb-8">
-              <h3 className="text-2xl font-bold text-[#CCFF00] mb-2">{category.title}</h3>
-              <div className="w-20 h-1 bg-gradient-to-r from-[#CCFF00] to-transparent rounded-full"></div>
+              <h3 className="text-2xl font-bold text-primary mb-2">{category.title}</h3>
+              <div className="w-20 h-1 bg-gradient-to-r from-primary to-transparent rounded-full"></div>
             </div>
             
             {/* Shadcn Marquee */}
@@ -82,7 +82,7 @@ export default function TechCategories() {
                       className="flex flex-col items-center space-y-3 mx-3 md:mx-6 group"
                     >
                       <div 
-                        className="w-16 md:w-20 h-16 md:h-20 flex items-center justify-center rounded-2xl bg-gray-800/50 hover:bg-gray-700/50 transition-all duration-300 group-hover:scale-110 border border-gray-700 hover:border-gray-500"
+                        className="w-16 md:w-20 h-16 md:h-20 flex items-center justify-center rounded-2xl bg-card hover:bg-accent transition-all duration-300 group-hover:scale-110 border border-border hover:border-primary/50 shadow-sm"
                         style={{ 
                           boxShadow: `0 0 20px ${tech.color}20`
                         }}
@@ -93,7 +93,7 @@ export default function TechCategories() {
                           className="transition-transform duration-300 group-hover:scale-110 md:text-4xl"
                         />
                       </div>
-                      <span className="text-sm font-medium text-gray-300 whitespace-nowrap group-hover:text-white transition-colors">
+                      <span className="text-sm font-medium text-muted-foreground whitespace-nowrap group-hover:text-foreground transition-colors">
                         {tech.name}
                       </span>
                     </MarqueeItem>
