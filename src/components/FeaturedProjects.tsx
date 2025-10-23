@@ -17,13 +17,13 @@ const projects = [
     },
     buttons: {
       primary: {
-        text: "LIVE DEMO",
+        text: "VIEW PLATFORM",
         href: "https://zucora.com/"
       },
-      secondary: {
-        text: "SEE ON GITHUB",
-        href: "https://github.com/vipinshrma"
-      }
+      // secondary: {
+      //   text: "SEE ON GITHUB",
+      //   href: "https://github.com/vipinshrma"
+      // }
     }
   },
   {
@@ -43,12 +43,12 @@ const projects = [
     buttons: {
       primary: {
         text: "VIEW PLATFORM",
-        href: "#"
+        href: "https://hyperwolf.com/"
       },
-      secondary: {
-        text: "SEE ON GITHUB",
-        href: "https://github.com/vipinshrma"
-      }
+      // secondary: {
+      //   text: "SEE ON GITHUB",
+      //   href: "https://github.com/vipinshrma"
+      // }
     }
   },
   {
@@ -67,13 +67,13 @@ const projects = [
     },
     buttons: {
       primary: {
-        text: "VIEW PROJECT",
-        href: "#"
+        text: "VIEW PLATFORM",
+        href: "https://hyperwolf.com/"
       },
-      secondary: {
-        text: "SEE ON GITHUB",
-        href: "https://github.com/vipinshrma"
-      }
+      // secondary: {
+      //   text: "SEE ON GITHUB",
+      //   href: "https://github.com/vipinshrma"
+      // }
     }
   },
   {
@@ -92,13 +92,13 @@ const projects = [
     },
     buttons: {
       primary: {
-        text: "VIEW DASHBOARD",
-        href: "#"
+        text: "VIEW PLATFORM",
+        href: "https://www.emerald.com.au/"
       },
-      secondary: {
-        text: "SEE ON GITHUB",
-        href: "https://github.com/vipinshrma"
-      }
+      // secondary: {
+      //   text: "SEE ON GITHUB",
+      //   href: "https://github.com/vipinshrma"
+      // }
     }
   }
 ];
