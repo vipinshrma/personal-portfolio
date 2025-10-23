@@ -4,6 +4,7 @@ const projects = [
   {
     category: "Website Builder Platform",
     title: "Zucora - Comprehensive Website Builder",
+    image:'/projects/zucora.png',
     description: "Currently developing a comprehensive website builder platform enabling users to create professional websites with drag-and-drop functionality. Built a unified component package system with centralized library architecture, implementing tree-shaking and efficient bundling strategies for optimal performance.",
     projectInfo: {
       year: "2024",
@@ -29,6 +30,7 @@ const projects = [
   {
     category: "E-commerce Platform",
     title: "Hyperwolf - Cannabis Delivery Platform",
+    image:'/projects/hyperwolf.png',
     description: "Developed and maintained complete frontend for cannabis delivery platform serving 400,000+ users across Southern California. Integrated multiple third-party services and optimized order processing workflow, achieving sub-60 minute delivery guarantee with high user satisfaction rates.",
     projectInfo: {
       year: "2022-Present",
@@ -54,6 +56,7 @@ const projects = [
   {
     category: "Point of Sale System",
     title: "Hyperwolf POS - Comprehensive Point of Sale",
+    image:'/projects/hyperwolf-pos.png',
     description: "Built comprehensive Point of Sale system with role-based authentication (admin, retailer, cashier). Implemented barcode and ID scanning functionality for rapid product entry and checkout. Designed multi-retailer management system supporting centralized inventory across multiple stores, reducing checkout time by 60%.",
     projectInfo: {
       year: "2023",
@@ -79,6 +82,7 @@ const projects = [
   {
     category: "Energy Management System",
     title: "Emerald EMS - IoT Energy Dashboard",
+    image:'/projects/emrald-planet.png',
     description: "Created energy management dashboard handling data for 400,000+ users. Implemented over-the-air (OTA) update system for IoT device management. Developed personalized partner dashboard with team management capabilities and built modular architecture supporting multiple utility management functions.",
     projectInfo: {
       year: "2023",
@@ -122,6 +126,7 @@ export default function FeaturedProjects() {
             projectInfo={project.projectInfo}
             mockupContent={project.mockupContent}
             buttons={project.buttons}
+            image={project.image}
           />
         ))}
       </div>

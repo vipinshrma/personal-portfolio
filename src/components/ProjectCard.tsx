@@ -2,6 +2,7 @@ interface ProjectCardProps {
   category?: string;
   title: string;
   description: string;
+  image:string;
   projectInfo: {
     year?: string;
     role?: string;
@@ -31,18 +32,18 @@ export default function ProjectCard({
   description, 
   projectInfo, 
   mockupContent, 
-  buttons 
+  buttons ,
+  image
 }: ProjectCardProps) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div className="bg-muted rounded-lg p-4">
-        <div className={`${mockupContent.background} rounded-lg h-64 flex items-center justify-center`}>
-          <div className={`text-center ${mockupContent.textColor || 'text-white'}`}>
-            <h4 className="text-2xl font-bold mb-2">{mockupContent.title}</h4>
-            {mockupContent.subtitle && (
-              <p className="text-sm">{mockupContent.subtitle}</p>
-            )}
-          </div>
+        <div className="rounded-lg h-64 overflow-hidden">
+          <img 
+            src={image} 
+            alt={title}
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
       <div>
