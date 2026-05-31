@@ -44,9 +44,10 @@ export default function Navigation() {
                 >
                   {isActive && (
                     <motion.span
-                      layoutId="active-nav-pill"
+                      initial={{ opacity: 0, scale: 0.92 }}
+                      animate={{ opacity: 1, scale: 1 }}
                       className="absolute inset-0 bg-primary rounded-full -z-10 shadow-[0_0_20px_rgba(0,240,255,0.3)]"
-                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                      transition={{ duration: 0.2, ease: 'easeOut' }}
                     />
                   )}
                   {link.name}

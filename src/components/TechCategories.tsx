@@ -72,35 +72,41 @@ export default function TechCategories() {
             </div>
             
             {/* Shadcn Marquee */}
-            <Marquee>
-              <MarqueeContent speed={40} pauseOnHover>
-                {category.technologies.map((tech, techIndex) => {
-                  const IconComponent = tech.icon;
-                  return (
-                    <MarqueeItem 
-                      key={`${categoryIndex}-${techIndex}`}
-                      className="flex flex-col items-center space-y-3 mx-3 md:mx-6 group"
-                    >
-                      <div 
-                        className="w-16 md:w-20 h-16 md:h-20 flex items-center justify-center rounded-2xl bg-card hover:bg-accent transition-all duration-300 group-hover:scale-110 border border-border hover:border-primary/50 shadow-sm"
-                        style={{ 
-                          boxShadow: `0 0 20px ${tech.color}20`
-                        }}
+            <div className="relative">
+              {/* Left & Right gradient blurs for infinite scroll look */}
+              <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+              
+              <Marquee>
+                <MarqueeContent speed={40} pauseOnHover>
+                  {category.technologies.map((tech, techIndex) => {
+                    const IconComponent = tech.icon;
+                    return (
+                      <MarqueeItem 
+                        key={`${categoryIndex}-${techIndex}`}
+                        className="flex flex-col items-center space-y-3 mx-3 md:mx-6 group"
                       >
-                        <IconComponent 
-                          size={28} 
-                          style={{ color: tech.color }} 
-                          className="transition-transform duration-300 group-hover:scale-110 md:text-4xl"
-                        />
-                      </div>
-                      <span className="text-sm font-medium text-muted-foreground whitespace-nowrap group-hover:text-foreground transition-colors">
-                        {tech.name}
-                      </span>
-                    </MarqueeItem>
-                  );
-                })}
-              </MarqueeContent>
-            </Marquee>
+                        <div 
+                          className="w-16 md:w-20 h-16 md:h-20 flex items-center justify-center rounded-2xl bg-card hover:bg-accent transition-all duration-300 group-hover:scale-110 border border-border hover:border-primary/50 shadow-sm"
+                          style={{ 
+                            boxShadow: `0 0 20px ${tech.color}20`
+                          }}
+                        >
+                          <IconComponent 
+                            size={28} 
+                            style={{ color: tech.color }} 
+                            className="transition-transform duration-300 group-hover:scale-110 md:text-4xl"
+                          />
+                        </div>
+                        <span className="text-sm font-medium text-muted-foreground whitespace-nowrap group-hover:text-foreground transition-colors">
+                          {tech.name}
+                        </span>
+                      </MarqueeItem>
+                    );
+                  })}
+                </MarqueeContent>
+              </Marquee>
+            </div>
           </div>
         ))}
       </div>
