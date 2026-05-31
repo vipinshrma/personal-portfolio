@@ -44,6 +44,8 @@ export default function SocialLinks() {
         <a 
           key={link.name}
           href={link.href} 
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-primary hover:text-primary/80 transition-colors"
           aria-label={link.name}
         >

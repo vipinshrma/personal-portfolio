@@ -1,54 +1,129 @@
-import { TextGenerateEffect } from './ui/text-generate-effect';
+'use client';
+import { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const xc = rect.width / 2;
+    const yc = rect.height / 2;
+    setRotateX((yc - y) / 10);
+    setRotateY((x - xc) / 10);
+  };
+
+  const handleMouseLeave = () => {
+    setRotateX(0);
+    setRotateY(0);
+  };
+
+  // Split heading for word-reveal animation
+  const headingWords = "ENGINEERING ACCESSIBLE AND USER FRIENDLY WEBSITES.".split(" ");
+
   return (
-    <section className="px-8 py-20 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <TextGenerateEffect
-            words="HI, I AM VIPAN SHARMA."
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
-          />
-          <p className="text-muted-foreground text-lg mb-8 max-w-md">
+    <section className="relative px-6 md:px-8 pt-32 pb-24 max-w-6xl mx-auto min-h-[85vh] flex flex-col justify-center overflow-hidden">
+      {/* Background Radial Glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="lg:col-span-8 flex flex-col items-start text-left">
+          {/* Status Badge */}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 mb-6 bg-glass-bg border border-glass-border px-4 py-1.5 rounded-full"
+          >
+            <span className="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_10px_#00f0ff]" />
+            <span className="font-mono text-xs font-semibold uppercase tracking-widest text-[#dae2fd]">
+              HI, I AM VIPAN SHARMA.
+            </span>
+          </motion.div>
+
+          {/* Heading with Italicized Custom Element */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-8 leading-[1.05] text-foreground max-w-4xl">
+            ENGINEERING <span className="text-primary italic font-light font-sans tracking-tight block sm:inline">ACCESSIBLE</span> AND USER FRIENDLY WEBSITES.
+          </h1>
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="text-muted-foreground text-md md:text-lg mb-12 max-w-2xl leading-relaxed"
+          >
             An India based front-end developer passionate about building 
             accessible and user friendly websites.
-          </p>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            <a href="/contact" className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium hover:bg-primary/90 transition-colors inline-block text-center">
-              CONTACT ME
+          </motion.p>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+          >
+            <a 
+              href="#work" 
+              className="bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-xl font-mono text-xs uppercase tracking-widest text-center shadow-[0_0_30px_rgba(0,240,255,0.2)] hover:shadow-[0_0_40px_rgba(0,240,255,0.45)] active:translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
+            >
+              VIEW CASE STUDIES &rarr;
             </a>
-            <div className="flex gap-4 justify-center sm:justify-start">
-              <a href="https://www.linkedin.com/in/vipan-sharma-2bb6051b0" className="text-primary hover:text-primary/80 transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              <a href="https://github.com/vipinshrma" className="text-primary hover:text-primary/80 transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </a>
-            </div>
-          </div>
+            <a 
+              href="/resume_vipan_sharma.pdf" 
+              download="Vipan_Sharma_Resume.pdf"
+              className="border border-[#1E293B] bg-glass-bg text-[#dae2fd] font-semibold px-8 py-4 rounded-xl font-mono text-xs uppercase tracking-widest text-center hover:bg-[#334155] active:translate-y-0.5 transition-all duration-300"
+            >
+              DOWNLOAD CV
+            </a>
+          </motion.div>
         </div>
-        <div className="flex justify-center lg:justify-end">
-          <div className="w-80 h-96 bg-gradient-to-br from-muted via-muted/80 to-muted/60 rounded-3xl overflow-hidden flex flex-col items-center justify-center relative shadow-2xl border border-border">
-            <div className="relative w-56 h-56 mb-6">
+
+        {/* 3D Tilt Card on Avatar */}
+        <div className="lg:col-span-4 flex justify-center lg:justify-end">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1, rotateX, rotateY }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            transition={{
+              opacity: { delay: 0.2, duration: 0.6 },
+              scale: { delay: 0.2, duration: 0.6 },
+              rotateX: { type: 'spring', stiffness: 200, damping: 20 },
+              rotateY: { type: 'spring', stiffness: 200, damping: 20 }
+            }}
+            style={{ transformStyle: 'preserve-3d' }}
+            className="glass-card w-72 md:w-80 h-[380px] md:h-[410px] rounded-3xl overflow-hidden flex flex-col items-center justify-center relative shadow-[0_20px_50px_rgba(0,240,255,0.1)] border border-glass-border p-6 cursor-grab active:cursor-grabbing"
+          >
+            {/* Card internal elements with 3D translation */}
+            <div 
+              style={{ transform: 'translateZ(40px)' }} 
+              className="relative w-48 h-48 md:w-52 md:h-52 mb-6 transition-transform duration-200"
+            >
               <Image
                 src="https://cdn3d.iconscout.com/3d/premium/thumb/male-programmer-3d-icon-png-download-6547032.png"
                 alt="Vipan Sharma - 3D Avatar"
                 fill
-                className="object-contain"
+                className="object-contain filter drop-shadow-[0_10px_15px_rgba(0,240,255,0.15)]"
                 priority
               />
             </div>
-            <div className="text-center px-6">
-              <h3 className="text-xl font-bold text-foreground mb-2">Vipan Sharma</h3>
-              <p className="text-sm text-muted-foreground font-medium">Frontend Developer</p>
-              <div className="w-12 h-0.5 bg-primary mx-auto mt-3 rounded-full"></div>
+            
+            <div 
+              style={{ transform: 'translateZ(25px)' }}
+              className="text-center px-4"
+            >
+              <h3 className="text-xl font-extrabold text-foreground mb-1 font-sans">Vipan Sharma</h3>
+              <p className="text-xs text-primary font-mono uppercase tracking-wider font-semibold">
+                Frontend Developer
+              </p>
+              <div className="w-10 h-0.5 bg-primary/40 mx-auto mt-3 rounded-full"></div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

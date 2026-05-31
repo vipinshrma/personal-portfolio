@@ -3,7 +3,11 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import SocialLinks from './SocialLinks';
 
-export default function Contact() {
+interface ContactProps {
+  isHeaderH1?: boolean;
+}
+
+export default function Contact({ isHeaderH1 = false }: ContactProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -39,97 +43,129 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="px-8 py-20 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">LET'S CONNECT</h2>
-          <p className="text-muted-foreground mb-4">
-            Say hello at{" "}
-            <a href="mailto:vipansharma.dev@gmail.com" className="text-primary hover:text-primary/80 transition-colors">
-              vipansharma.dev@gmail.com
-            </a>
-          </p>
-          <p className="text-muted-foreground mb-8">
-            For more info, here's my{" "}
-            <a 
-              href="/resume_vipan_sharma.pdf" 
-              download="Vipan_Sharma_Resume.pdf"
-              className="text-primary hover:text-primary/80 transition-colors"
-            >
-              resume
-            </a>
-          </p>
+    <section id="contact" className="px-6 md:px-8 py-24 max-w-6xl mx-auto border-t border-glass-border">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        {/* Left Side Info */}
+        <div className="lg:col-span-5 flex flex-col justify-start">
+          <h2 className="font-mono text-xs font-semibold uppercase tracking-widest text-primary mb-2">
+            04 / CONTACT
+          </h2>
+          {isHeaderH1 ? (
+            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-8">
+              LET'S CONNECT
+            </h1>
+          ) : (
+            <h3 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-8">
+              LET'S CONNECT
+            </h3>
+          )}
           
-          <SocialLinks />
+          <p className="text-muted-foreground leading-relaxed text-sm md:text-md mb-6 max-w-sm">
+            I'm currently looking for new opportunities. Feel free to ask a question, suggest a project, or just say hello.
+          </p>
+
+          <div className="space-y-4 mb-8">
+            <div>
+              <span className="block font-mono text-[9px] uppercase tracking-widest text-muted-foreground mb-1">EMAIL ME AT</span>
+              <a 
+                href="mailto:vipansharma.dev@gmail.com" 
+                className="text-primary font-bold hover:text-primary-fixed-dim transition-colors duration-300 text-sm md:text-md"
+              >
+                vipansharma.dev@gmail.com
+              </a>
+            </div>
+            <div>
+              <span className="block font-mono text-[9px] uppercase tracking-widest text-muted-foreground mb-1">RESUME / PROFILE</span>
+              <a 
+                href="/resume_vipan_sharma.pdf" 
+                download="Vipan_Sharma_Resume.pdf"
+                className="text-primary font-bold hover:text-primary-fixed-dim transition-colors duration-300 text-sm md:text-md"
+              >
+                Download my Resume &rarr;
+              </a>
+            </div>
+          </div>
+          
+          <div className="mt-auto">
+            <span className="block font-mono text-[9px] uppercase tracking-widest text-muted-foreground mb-3">SOCIAL SPACES</span>
+            <SocialLinks />
+          </div>
         </div>
         
-        <div>
+        {/* Right Side Form */}
+        <div className="lg:col-span-7">
           {isSubmitted ? (
-            <div className="bg-green-900/20 border border-green-500 rounded-lg p-6 text-center">
-              <h3 className="text-xl font-bold text-green-400 mb-2">Message Sent!</h3>
-              <p className="text-green-300">Thank you for your message. I'll get back to you soon!</p>
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center glass-card">
+              <span className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4 text-xl">&check;</span>
+              <h3 className="text-xl font-extrabold text-[#dae2fd] mb-2">Message Sent!</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                Thank you for reaching out. I'll read your message and get back to you as soon as possible.
+              </p>
               <button 
                 onClick={() => setIsSubmitted(false)}
-                className="mt-4 text-primary hover:text-primary/80 transition-colors underline"
+                className="text-xs font-mono uppercase tracking-widest text-primary hover:underline underline-offset-4"
               >
-                Send another message
+                Send another message &rarr;
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm text-muted-foreground mb-2">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="John Doe"
-                className="w-full bg-background border border-input rounded-lg px-4 py-3 text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none transition-colors"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm text-muted-foreground mb-2">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full bg-background border border-input rounded-lg px-4 py-3 text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none transition-colors"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="subject" className="block text-sm text-muted-foreground mb-2">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                className="w-full bg-background border border-input rounded-lg px-4 py-3 text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none transition-colors"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm text-muted-foreground mb-2">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={6}
-                className="w-full bg-background border border-input rounded-lg px-4 py-3 text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none transition-colors resize-none"
-                required
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className={`w-full md:w-auto px-6 md:px-8 py-3 rounded-full font-medium transition-colors ${
-                isSubmitting 
-                  ? 'bg-muted text-muted-foreground cursor-not-allowed' 
-                  : 'bg-primary text-primary-foreground hover:bg-primary/90'
-              }`}
-            >
-              {isSubmitting ? 'SENDING...' : 'SUBMIT'}
-            </button>
-          </form>
+            <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 rounded-2xl border border-glass-border space-y-5">
+              <div>
+                <label htmlFor="name" className="block text-[10px] font-mono uppercase tracking-widest text-primary/70 font-semibold mb-2">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="John Doe"
+                  className="w-full bg-[#0b1326]/60 border border-glass-border rounded-xl px-4 py-3.5 text-foreground placeholder-muted-foreground/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-300 shadow-sm text-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-[10px] font-mono uppercase tracking-widest text-primary/70 font-semibold mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="johndoe@example.com"
+                  className="w-full bg-[#0b1326]/60 border border-glass-border rounded-xl px-4 py-3.5 text-foreground placeholder-muted-foreground/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-300 shadow-sm text-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="subject" className="block text-[10px] font-mono uppercase tracking-widest text-primary/70 font-semibold mb-2">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Project Inquiry"
+                  className="w-full bg-[#0b1326]/60 border border-glass-border rounded-xl px-4 py-3.5 text-foreground placeholder-muted-foreground/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-300 shadow-sm text-sm"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-[10px] font-mono uppercase tracking-widest text-primary/70 font-semibold mb-2">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  placeholder="Tell me about your project or ideas..."
+                  className="w-full bg-[#0b1326]/60 border border-glass-border rounded-xl px-4 py-3.5 text-foreground placeholder-muted-foreground/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-300 shadow-sm resize-none text-sm"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full px-6 py-4 rounded-xl font-mono text-xs font-semibold uppercase tracking-widest transition-all duration-300 ${
+                  isSubmitting 
+                    ? 'bg-glass-bg text-muted-foreground cursor-not-allowed border border-glass-border' 
+                    : 'bg-primary text-primary-foreground hover:shadow-[0_0_30px_rgba(0,240,255,0.3)] hover:scale-[1.01] active:translate-y-0.5'
+                }`}
+              >
+                {isSubmitting ? 'SENDING...' : 'SUBMIT MESSAGE'}
+              </button>
+            </form>
           )}
         </div>
       </div>

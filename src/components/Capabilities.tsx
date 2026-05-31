@@ -1,5 +1,5 @@
 import { 
-  SiHtml5, SiCss3, SiJavascript, SiReact, SiVuedotjs, SiNextdotjs, SiNodedotjs,
+  SiHtml5, SiCss, SiJavascript, SiReact, SiVuedotjs, SiNextdotjs, SiNodedotjs,
   SiGraphql, SiMui, SiTailwindcss, SiDocker, SiKubernetes,
   SiMongodb, SiExpress, SiPrisma, SiSupabase, SiGithub, SiGit,
   SiFigma, SiTypescript
@@ -12,7 +12,7 @@ export default function Capabilities() {
       title: 'Frontend Development',
       skills: [
         { name: 'HTML', icon: SiHtml5 },
-        { name: 'CSS', icon: SiCss3 },
+        { name: 'CSS', icon: SiCss },
         { name: 'JavaScript', icon: SiJavascript },
         { name: 'React.js', icon: SiReact },
         { name: 'Vue.js', icon: SiVuedotjs },

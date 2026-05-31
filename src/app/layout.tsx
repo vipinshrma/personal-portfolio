@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import CTASection from "../components/CTASection";
 import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "../components/theme-provider";
 import LenisScroll from "../components/lenis-scroll";
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Vipan Sharma - Portfolio",
-  description: "Sydney based front-end developer passionate about building accessible and user friendly websites.",
+  description: "India based front-end developer passionate about building accessible and user-friendly websites.",
 };
 
 export default function RootLayout({
@@ -35,7 +36,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          forcedTheme="dark"
           disableTransitionOnChange
         >
           <LenisScroll />
@@ -43,6 +44,7 @@ export default function RootLayout({
           <main>
             {children}
           </main>
+          <CTASection />
           <Footer />
           <Toaster
             position="top-right"

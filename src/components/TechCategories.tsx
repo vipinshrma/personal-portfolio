@@ -1,5 +1,5 @@
 import { 
-  SiHtml5, SiCss3, SiJavascript, SiReact, SiNextdotjs, SiNodedotjs,
+  SiHtml5, SiCss, SiJavascript, SiReact, SiNextdotjs, SiNodedotjs,
   SiGraphql, SiMui, SiTailwindcss, SiDocker,
   SiMongodb, SiExpress, SiPrisma, SiSupabase, SiGithub, SiGit,
   SiTypescript
@@ -13,7 +13,7 @@ export default function TechCategories() {
       title: 'Frontend Development',
       technologies: [
         { name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
-        { name: 'CSS3', icon: SiCss3, color: '#1572B6' },
+        { name: 'CSS3', icon: SiCss, color: '#1572B6' },
         { name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
         { name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
         { name: 'React.js', icon: SiReact, color: '#61DAFB' },

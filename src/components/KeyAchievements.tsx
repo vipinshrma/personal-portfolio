@@ -10,37 +10,45 @@ export default function KeyAchievements() {
   ];
 
   return (
-    <section className="px-8 py-20 max-w-7xl mx-auto">
-      <div className="mb-16">
-        <h2 className="text-3xl md:text-5xl font-bold mb-8">KEY ACHIEVEMENTS</h2>
-      </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        <div>
+    <section className="px-6 md:px-8 py-20 max-w-6xl mx-auto border-t border-glass-border">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Achievements list */}
+        <div className="lg:col-span-7">
+          <span className="font-mono text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">
+            02 / MILESTONES
+          </span>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-8">
+            KEY ACHIEVEMENTS
+          </h2>
+          
           <ul className="space-y-6">
             {achievements.map((achievement, index) => (
-              <li key={index} className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-muted-foreground leading-relaxed text-lg">{achievement}</p>
+              <li key={index} className="flex items-start gap-4 group">
+                <span className="font-mono text-xs text-primary font-bold mt-1 bg-primary/5 border border-primary/20 rounded px-2 py-0.5 min-w-[28px] text-center">
+                  0{index + 1}
+                </span>
+                <p className="text-muted-foreground leading-relaxed text-sm md:text-md group-hover:text-[#dae2fd] transition-colors duration-300">
+                  {achievement}
+                </p>
               </li>
             ))}
           </ul>
         </div>
         
-        <div className="flex justify-center lg:justify-end">
-          <div className="w-full max-w-md">
+        {/* Achievement Image */}
+        <div className="lg:col-span-5 flex flex-col justify-center lg:justify-end gap-3">
+          <div className="w-full aspect-[4/3] border border-[#1E293B] rounded-3xl overflow-hidden relative shadow-[0_20px_50px_rgba(0,240,255,0.05)] bg-[#0b1326]">
             <Image
               src="/winner.jpeg"
               alt="Netathon Hackathon Winner - Net Solutions"
-              width={400}
-              height={300}
-              className="w-full h-auto rounded-lg shadow-lg"
+              fill
+              className="object-cover transition-transform duration-700 hover:scale-[1.03]"
               priority
             />
-            <p className="text-muted-foreground text-sm mt-3 text-center">
-              Netathon Hackathon Winner - Net Solutions (₹1,00,000)
-            </p>
           </div>
+          <p className="text-muted-foreground text-[10px] tracking-wider uppercase font-mono text-center mt-2">
+            Netathon Hackathon Winner - Net Solutions (₹1,00,000)
+          </p>
         </div>
       </div>
     </section>
