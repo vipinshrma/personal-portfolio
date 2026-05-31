@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
@@ -67,12 +68,12 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
           >
-            <a 
-              href="#work" 
+            <Link 
+              href="/work" 
               className="bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-xl font-mono text-xs uppercase tracking-widest text-center shadow-[0_0_30px_rgba(0,240,255,0.2)] hover:shadow-[0_0_40px_rgba(0,240,255,0.45)] active:translate-y-0.5 hover:scale-[1.02] transition-all duration-300"
             >
               VIEW CASE STUDIES &rarr;
-            </a>
+            </Link>
             <a 
               href="/resume_vipan_sharma.pdf" 
               download="Vipan_Sharma_Resume.pdf"
